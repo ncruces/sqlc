@@ -36,7 +36,7 @@ sql:
   queries: sqlite/query.sql
   engine: sqlite
   database:
-    uri: file:authors?mode=memory&cache=shared
+    uri: file:/authors?vfs=memdb
   rules:
   - sqlc/db-prepare
   gen:

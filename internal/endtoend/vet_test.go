@@ -53,7 +53,7 @@ func TestExamplesVet(t *testing.T) {
 
 			if tc != "kotlin" && tc != "python" {
 				if s, found := findSchema(t, filepath.Join(path, "sqlite")); found {
-					dsn := fmt.Sprintf("file:%s?mode=memory&cache=shared", tc)
+					dsn := fmt.Sprintf("file:/%s?vfs=memdb", tc)
 					db, cleanup := sqltest.CreateSQLiteDatabase(t, dsn, []string{s})
 					defer db.Close()
 					defer cleanup()

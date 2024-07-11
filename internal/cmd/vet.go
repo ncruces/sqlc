@@ -20,6 +20,7 @@ import (
 	"github.com/jackc/pgx/v5"
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
+	_ "github.com/ncruces/go-sqlite3/vfs/memdb"
 	"github.com/spf13/cobra"
 	"google.golang.org/protobuf/encoding/protojson"
 

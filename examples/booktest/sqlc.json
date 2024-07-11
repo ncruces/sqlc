@@ -41,7 +41,7 @@
       "queries": "sqlite/query.sql",
       "engine": "sqlite",
       "database": {
-        "uri": "file:booktest?mode=memory&cache=shared"
+        "uri": "file:/booktest?vfs=memdb"
       },
       "rules": [
         "sqlc/db-prepare"

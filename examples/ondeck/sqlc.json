@@ -47,7 +47,7 @@
       "queries": "sqlite/query",
       "engine": "sqlite",
       "database": {
-        "uri": "file:ondeck?mode=memory&cache=shared"
+        "uri": "file:/ondeck?vfs=memdb"
       },
       "rules": [
         "sqlc/db-prepare"
