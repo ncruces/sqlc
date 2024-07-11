@@ -18,6 +18,8 @@ import (
 	"github.com/google/cel-go/cel"
 	"github.com/google/cel-go/ext"
 	"github.com/jackc/pgx/v5"
+	_ "github.com/ncruces/go-sqlite3/driver"
+	_ "github.com/ncruces/go-sqlite3/embed"
 	"github.com/spf13/cobra"
 	"google.golang.org/protobuf/encoding/protojson"
 
@@ -517,7 +519,7 @@ func (c *checker) checkSQL(ctx context.Context, s config.SQL) error {
 			prep = &dbPreparer{db}
 			expl = &mysqlExplainer{db}
 		case config.EngineSQLite:
-			db, err := sql.Open("sqlite", dburl)
+			db, err := sql.Open("sqlite3", dburl)
 			if err != nil {
 				return fmt.Errorf("database: connection error: %s", err)
 			}
